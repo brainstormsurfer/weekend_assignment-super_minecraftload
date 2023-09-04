@@ -1,0 +1,433 @@
+*,
+*:before, 
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: .25px solid red;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.main-container {
+  display: flex;  
+  width: max-content;
+  min-width: 90%;
+  height: 1000px;
+  /* background-color:#6b69f0 ; */
+  justify-content: center;
+  padding-top: 1em;  
+  /* flex-direction: column; */
+}
+
+.player-inventory {
+  display: flex;  
+  border: 5px rgb(0, 0, 0) ridge;
+  width: 100px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.container-cards-zone {
+  display: flex;
+  flex-direction: column;
+  border: 1px rgb(0, 0, 0) ridge;
+  height: 1000px;
+  width: 70%;
+  gap: 3em;
+}
+.cards-area {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  border: 5px rgb(0, 0, 0) ridge;
+  flex: 1;
+  height: 720px;
+  /* gap: 1.5em; */
+}
+
+.card-inventory {
+  display: flex;
+  height: 100px;
+}
+.container-active-cards {
+  display: flex;
+  /* flex-direction: column; */
+  border: 2px greenyellow dotted;
+  background-color: greenyellow;
+  height: 1000px;
+  flex: 1;
+}
+.container-market-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 5px rgb(0, 0, 0) ridge;
+  /* flex: 1; */
+  width: 175px;
+  max-width: 175px;
+  height: 350px;
+}
+.pilot-card {
+  height: 100%;
+}
+
+.container-draw-pile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px rgb(0, 0, 0) ridge;
+  flex: 1;  
+  height: 400px;
+}
+/* .container-market-card {  
+   margin-right: 1.5em;
+}  */
+.container-market-card.red {  
+  background: linear-gradient(to left top, rgba(255, 21, 21, 0.829), rgb(255, 255, 255));
+} 
+.container-market-card.yellow {  
+  background: linear-gradient(to left top,  rgba(255, 208, 0, 0.74), rgb(255, 255, 255));
+} 
+.container-market-card.blue {  
+  background: linear-gradient(to left top, rgba(60, 238, 199, 0.747), rgb(255, 255, 255));
+} 
+.container-market-card.joker {  
+  background: linear-gradient(45deg, rgba(255, 48, 48, 0.664), rgba(0,255,0,0) 70.71%),
+  linear-gradient(120deg, rgba(255, 208, 0, 0.712), rgba(0,255,0,0) 70.71%),
+  linear-gradient(270deg, rgba(50, 192, 161, 0.692), rgba(0,0,255,0) 70.71%);
+} 
+
+.red-pilots.pilot-card {
+  background-image: url('./images/card-teamred15-drillred2-bomb6-vp5-bonusbomb.jpg');
+}
+
+.yellow-pilots.pilot-card{
+  background-image: url('./images/card-teamred15-drillyellow3-vp5-bonusmineral.jpg');
+}
+.blue-pilots.pilot-card {
+  background-image: url('./images/card-teamred15-drillblue1-draw2-vp3-bonusbomb.jpg');}
+
+/* .joker-pilots {
+  
+} */
+.in-hand {
+  position: relative;
+  width: 165px;
+  height: 238px;
+}
+
+.in-hand::after {
+  position: absolute;
+  border: 2px solid rgb(187, 186, 197);
+  content: "";
+  top: 23px;
+  left: 0;
+  width: 33px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: rgba(65, 206, 52, 0.658); /* Change background color to red */
+  animation: blink 5s infinite; /* Increase animation duration to 5 seconds */
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1; /* Start and end with full opacity */
+  }
+  50% {
+    opacity: 0.5; /* Blink by reducing opacity */
+  }
+}
+
+.in-hand::before {
+  position: absolute;
+  border: 3px ridge rgb(187, 186, 197);
+  content: "";
+  top: 137px;
+  left: 0;
+  width: 37px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.in-hand:hover::before {
+  transform: scale(2.5);
+  border-radius: 50%;
+  border: 3px ridge  rgb(61, 6, 6);
+  box-shadow: inset 0px 0px 5px 2px rgb(255, 166, 0);
+  background-image: url('./images/token-bomb.png');
+}
+
+.grid-container {
+  width: 500px; 
+  height: 500px; 
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* overflow: hidden;   */
+  flex: 1;
+}
+
+.grid-wrapper {
+  display: grid;
+  border: 1px solid green;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  /* grid-gap: 1px;   */
+  width: calc(100% - 60px);
+  height: 100%;
+}
+
+.grid-square {
+  width: 100%;   
+  border: 2px blue solid;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+/* ====== Cards ===== */ 
+
+.card-team-green {
+  background-image: url('./images/team-green.png');
+}
+.card-team-purple {
+  background-image: url('./images/team-purple.png');
+}
+.card-team-white {
+  background-image: url('./images/team-white.png');
+}
+.card-team-red {
+  background-image: url('./images/team-red.png');
+}
+.card-teamred15-drillblue1-draw2-vp3-bonusbomb {
+  background-image: url('./images/card-teamred15-drillblue1-draw2-vp3-bonusbomb.jpg');
+}
+.card-teamred15-drillred2-bomb6-vp5-bonusbomb {
+  background-image: url('./images/card-teamred15-drillred2-bomb6-vp5-bonusbomb.jpg');
+}
+.card-teamred15-drillyellow3-vp5-bonusmineral {
+  background-image: url('./images/card-teamred15-drillyellow3-vp5-bonusmineral.jpg');
+}
+
+
+
+
+/* ====== Board Tiles / Squares ===== */ 
+/* Terrain: Dirt, Steel Plate, Rocks */
+/* Content: Minerals, Artifact, Bomb */ 
+/*? Minerals (value): Iron(2), Gold(3), Platinum(5), Emerald(8), Ruby(10), Diamond(12) ?*/
+.tunnel-1 {
+  background-image: url('./images/tunnel-1.png');
+}
+.tunnel-2 {
+  background-image: url('./images/tunnel-2.png');
+}
+.tunnel-3 {
+  background-image: url('./images/tunnel-3.png');
+}
+.adirt {
+        background-image: url('./images/adirt.jpg');
+}
+.bdirt {
+  background-image: url('./images/bdirt.jpg');
+}
+.cdirt {
+  background-image: url('./images/cdirt.jpg');
+}
+
+.adirt-iron {
+  background-image: url('./images/adirt-iron.jpg');
+}
+.bdirt-iron {
+  background-image: url('./images/bdirt-iron.jpg');
+}
+.cdirt-iron {
+  background-image: url('./images/cdirt-iron.jpg');
+}
+
+.adirt-gold {
+  background-image: url('./images/adirt-gold.jpg');
+}
+.bdirt-gold {
+  background-image: url('./images/bdirt-gold.jpg');
+}
+.cdirt-gold {
+  background-image: url('./images/cdirt-gold.jpg');
+}
+
+.adirt-platinum {
+  background-image: url('./images/adirt-platinum.jpg');
+}
+.bdirt-platinum {
+  background-image: url('./images/bdirt-platinum.jpg');
+}
+.cdirt-platinum {
+  background-image: url('./images/cdirt-platinum.jpg');
+}
+
+/* No RUBY, EMERALD, and DIAMOND at LEVELS A , B */ 
+.cdirt-ruby {
+  background-image: url('./images/cdirt-ruby.jpg');
+}
+.cdirt-emerald {
+  background-image: url('./images/cdirt-emerald.jpg');
+}
+.cdirt-diamond {
+  background-image: url('./images/cdirt-diamond.jpg');
+}
+
+
+/* No BOMB at LEVEL C */
+.adirt-bomb {
+  background-image: url('./images/adirt-bomb.jpg');
+}
+
+.bdirt-bomb {
+  background-image: url('./images/bdirt-bomb.jpg');
+}
+
+.adirt-artifact {
+  background-image: url('./images/adirt-artifact.jpg');
+}
+.bdirt-artifact {
+  background-image: url('./images/bdirt-artifact.jpg');
+}
+.cdirt-artifact {
+  background-image: url('./images/cdirt-artifact.jpg');
+}
+
+.adirt-draw1 {
+  background-image: url('./images/adirt-draw1.jpg');
+}
+.bdirt-draw1 {
+  background-image: url('./images/bdirt-draw1.jpg');
+}
+.cdirt-draw1 {
+  background-image: url('./images/cdirt-draw1.jpg');
+}
+
+.adirt-draw2 {
+  background-image: url('./images/adirt-draw2.jpg');
+}
+.bdirt-draw2 {
+  background-image: url('./images/bdirt-draw2.jpg');
+}
+.cdirt-draw2 {
+  background-image: url('./images/cdirt-draw2.jpg');
+
+}
+
+.sp-red {
+  background-image: url('./images/sp-red.jpg');
+}
+.sp-red-iron {
+  background-image: url('./images/sp-red-iron.jpg');
+}
+.sp-red-gold {
+    background-image: url('./images/sp-red-gold.jpg');
+}
+.sp-red-platinum {
+    background-image: url('./images/sp-red-platinum.jpg');
+}
+.sp-red-emerald {
+    background-image: url('./images/sp-red-emerald.jpg');
+}
+.sp-red-diamond {
+    background-image: url('./images/sp-red-diamond.jpg');
+}
+.sp-red-draw1 {
+    background-image: url('./images/sp-red-draw1.jpg');
+}
+.sp-red-draw2 {
+    background-image: url('./images/sp-red-draw2.jpg');
+}
+.sp-red-bomb {
+    background-image: url('./images/sp-red.jpg');
+}
+
+.sp-yellow {
+  background-image: url('./images/sp-yellow.jpg');
+}
+.sp-yellow-iron {
+  background-image: url('./images/sp-yellow-iron.jpg');
+}
+.sp-yellow-gold  {
+  background-image: url('./images/sp-yellow-gold.jpg');
+}
+.sp-yellow-platinum {
+  background-image: url('./images/sp-yellow-platinum.jpg');
+}
+.sp-yellow-emerald {
+  background-image: url('./images/sp-yellow-emerald.jpg');
+}
+.sp-yellow-diamond {
+  background-image: url('./images/sp-yellow-diamond.jpg');
+}
+.sp-yellow-draw1 {
+  background-image: url('./images/sp-yellow-draw1.jpg');
+}
+.sp-yellow-draw2 {
+  background-image: url('./images/sp-yellow-draw2.jpg');
+}
+.sp-yellow-bomb {
+  background-image: url('./images/sp-yellow-bomb.jpg');
+}
+
+.sp-blue {
+  background-image: url('./images/sp-blue.jpg');
+}
+.sp-blue-iron {
+  background-image: url('./images/sp-blue-iron.jpg');
+}
+.sp-blue-gold  {
+  background-image: url('./images/sp-blue-gold.jpg');
+}
+.sp-blue-platinum {
+  background-image: url('./images/sp-blue-platinum.jpg');
+}
+.sp-blue-emerald {
+  background-image: url('./images/sp-blue-emerald.jpg');
+}
+.sp-blue-diamond {
+  background-image: url('./images/sp-blue-diamond.jpg');
+}
+.sp-blue-draw1 {
+  background-image: url('./images/sp-blue-draw1.jpg');
+}
+.sp-blue-draw2 {
+  background-image: url('./images/sp-blue-draw2.jpg');
+}
+.sp-blue-bomb {
+  background-image: url('./images/sp-blue-bomb.jpg');
+}
+
+
+/* No IRON and RUBY at ROCK */ 
+
+.rock {
+  background-image: url('./images/rock.jpg');
+}
+.rock-gold  {
+  background-image: url('./images/rock-gold.jpg');
+}
+.rock-platinum {
+  background-image: url('./images/rock-platinum.jpg');
+}
+.rock-emerald  {
+  background-image: url('./images/rock-emerald.jpg');
+}
+.rock-diamond {
+  background-image: url('./images/rock-diamond.jpg');
+}
+.rock-draw1 {
+  background-image: url('./images/rock-draw1.jpg');
+}
+.rock-draw2 {
+  background-image: url('./images/rock-draw2.jpg');
+}
+.rock-bomb {
+  background-image: url('./images/rock-bomb.jpg');
+}
+

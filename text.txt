@@ -1,6 +1,0 @@
-git init
-git add .
-git commit -m "initial"
-git branch -M main
-git remote add origin git@github.com:brainstormsurfer/weekend_assignment-super_minecraftload.git
-git push -u origin main
