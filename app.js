@@ -1,67 +1,72 @@
 import { Board } from "./Board.js";
 import { UIHandler } from "./UIHandler.js";
+import { Player } from "./Player.js";
+import { CardManager } from "./CardManager.js";
+import { Card } from "./Card.js";
 
 // Define a mapping between terrain types and class names
-const terrainToClass = {
-  "sp-red": ["0", "9"],
+const board1a = {
+  "steelPlate-red": ["0", "9"],
   "rock-draw2": ["1"],
-  "adirt-gold": ["2", "18", "24"],
-  "adirt-iron": ["3", "4", "8", "16", "19", "28", "31"],
-  "sp-red-platinum": ["8"],
-  "sp-red-iron": ["10"],
+  "dirt-gold": ["2", "18", "24"],
+  "dirt-iron": ["3", "4", "8", "16", "19", "28", "31"],
+  "steelPlate-red-platinum": ["8"],
+  "steelPlate-red-iron": ["10"],
   "rock-draw1": ["12"],
-  "sp-yellow-bomb": ["13"],
-  "sp-blue": ["15"],
-  "adirt-artifact": ["17", "29"],
+  "steelPlate-yellow-bomb": ["13"],
+  "steelPlate-blue": ["15"],
+  "dirt-artifact": ["17", "29"],
   "rock": ["20"],
-  "sp-blue-iron": ["22"],
-  "sp-blue-platinum": ["23"],
-  "adirt-platinum": ["25"],
-  "adirt-bomb": ["26"],
+  "steelPlate-blue-iron": ["22"],
+  "steelPlate-blue-platinum": ["23"],
+  "dirt-platinum": ["25"],
+  "dirt-bomb": ["26"],
 };
-const terrainToClass2 = {
-  "sp-red": ["0", "9"],
+
+const board2a = {
+  "steelPlate-red": ["0", "9"],
   "rock-draw2": ["1"],
-  "adirt-gold": ["2", "18", "24"],
-  "adirt-iron": ["3", "4", "8", "16", "19", "28", "31"],
-  "sp-red-platinum": ["8"],
-  "sp-red-iron": ["10"],
+  "dirt-gold": ["2", "18", "24"],
+  "dirt-iron": ["3", "4", "8", "16", "19", "28", "31"],
+  "steelPlate-red-platinum": ["8"],
+  "steelPlate-red-iron": ["10"],
   "rock-draw1": ["12"],
-  "sp-yellow-bomb": ["13"],
-  "sp-blue": ["15"],
-  "adirt-artifact": ["17", "29"],
+  "steelPlate-yellow-bomb": ["13"],
+  "steelPlate-blue": ["15"],
+  "dirt-artifact": ["17", "29"],
   "rock": ["20"],
-  "sp-blue-iron": ["22"],
-  "sp-blue-platinum": ["23"],
-  "adirt-platinum": ["25"],
-  "adirt-bomb": ["26"],
+  "steelPlate-blue-iron": ["22"],
+  "steelPlate-blue-platinum": ["23"],
+  "dirt-platinum": ["25"],
+  "dirt-bomb": ["26"],
 };
-const terrainToClass3 = {
-  "sp-red": ["0", "9"],
+
+const board3a = {
+  "steelPlate-red": ["0", "9"],
   "rock-draw2": ["1"],
-  "adirt-gold": ["2", "18", "24"],
-  "adirt-iron": ["3", "4", "8", "16", "19", "28", "31"],
-  "sp-red-platinum": ["8"],
-  "sp-red-iron": ["10"],
+  "dirt-gold": ["2", "18", "24"],
+  "dirt-iron": ["3", "4", "8", "16", "19", "28", "31"],
+  "steelPlate-red-platinum": ["8"],
+  "steelPlate-red-iron": ["10"],
   "rock-draw1": ["12"],
-  "sp-yellow-bomb": ["13"],
-  "sp-blue": ["15"],
-  "adirt-artifact": ["17", "29"],
+  "steelPlate-yellow-bomb": ["13"],
+  "steelPlate-blue": ["15"],
+  "dirt-artifact": ["17", "29"],
   "rock": ["20"],
-  "sp-blue-iron": ["22"],
-  "sp-blue-platinum": ["23"],
-  "adirt-platinum": ["25"],
-  "adirt-bomb": ["26"],
+  "steelPlate-blue-iron": ["22"],
+  "steelPlate-blue-platinum": ["23"],
+  "dirt-platinum": ["25"],
+  "dirt-bomb": ["26"],
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   // Create an instance of the Board class with board numbers
-  const board1 = new Board("grid-container-top", terrainToClass);
-  const board2 = new Board("grid-container-bottom", terrainToClass);
+  const board1 = new Board("grid-container-top", board1a, "board1");
+  const board2 = new Board("grid-container-bottom", board2a, "board2");
 
-  // Generate squares for both boards first
-  board1.generateSquares(board1.gridWrapper, 1);
-  board2.generateSquares(board2.gridWrapper, 2);
+  // ?Generate squares for both boards first
+  // board1.generateSquares(board1.gridWrapper, 1);
+  // board2.generateSquares(board2.gridWrapper, 2);
 
   // Create an instance of the UI class and pass the board instances
   const ui1 = new UIHandler(board1);
@@ -71,3 +76,23 @@ document.addEventListener("DOMContentLoaded", () => {
   ui1.initialize();
   ui2.initialize();
 });
+
+// Create instances of your classes
+const player = new Player(1);
+const cardManager = new CardManager();
+
+// Set up test data
+const card = new Card("red", 12, /* other card properties */);
+player.money = 15; // Player has enough money to purchase the card
+card.mineralInventory = {
+  iron: 6,
+  gold: 8,
+};
+
+// Call the method you want to test
+player.purchaseCard(card, card.cost);
+
+// Check the results
+console.log("Player's money after purchase:", player.money); // Should be 3
+console.log("Player's mineral inventory after purchase:", player.mineralInventory); // Should be empty
+// Check any other properties or conditions you want to test

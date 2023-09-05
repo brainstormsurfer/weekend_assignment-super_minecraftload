@@ -1,8 +1,44 @@
 export class UIHandler {
-    constructor(board) {
-      this.board = board; // Reference to the game board
-    }
-  
+      constructor(board, patternValidator) {
+        this.board = board;
+        this.patternValidator = patternValidator;
+      }
+    
+      // Display relevant squares for drilling based on player's action
+      displayDrillingSquares(icons) {
+        // Implement logic to highlight drillable squares
+        // Filter and highlight squares based on the provided icons
+      }
+    
+      // Display relevant squares for bombing based on player's action
+      displayBombingSquares(bomberCard) {
+        // Implement logic to highlight valid bombing squares
+        // Use the patternValidator to validate the bombing pattern
+      }
+    
+      // Handle player's drilling action
+      handleDrillingAction(selectedSquares, icons) {
+        // Validate the drilling pattern using the patternValidator
+        if (this.patternValidator.validateDrillingPattern(selectedSquares, icons)) {
+          // Execute the drilling action
+          // Update the board state and UI as needed
+        } else {
+          // Display an error message to the player
+        }
+      }
+    
+      // Handle player's bombing action
+      handleBombingAction(selectedSquares, bomberCard) {
+        // Validate the bombing pattern using the patternValidator
+        if (this.patternValidator.validateBombingPattern(selectedSquares, bomberCard)) {
+          // Execute the bombing action
+          // Update the board state and UI as needed
+        } else {
+          // Display an error message to the player
+        }
+      }
+    
+
     initialize() {
       // Attach event listeners for different elements
       this.attachSquareClickListeners();

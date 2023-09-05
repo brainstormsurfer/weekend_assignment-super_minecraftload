@@ -53,7 +53,6 @@
 }
 .container-active-cards {
   display: flex;
-  /* flex-direction: column; */
   border: 2px greenyellow dotted;
   background-color: greenyellow;
   height: 1000px;
@@ -64,11 +63,11 @@
   justify-content: space-between;
   flex-direction: column;
   border: 5px rgb(0, 0, 0) ridge;
-  /* flex: 1; */
   width: 175px;
   max-width: 175px;
   height: 350px;
 }
+
 .pilot-card {
   height: 100%;
 }
@@ -81,9 +80,8 @@
   flex: 1;  
   height: 400px;
 }
-/* .container-market-card {  
-   margin-right: 1.5em;
-}  */
+
+
 .container-market-card.red {  
   background: linear-gradient(to left top, rgba(255, 21, 21, 0.829), rgb(255, 255, 255));
 } 
@@ -227,8 +225,8 @@
 .tunnel-3 {
   background-image: url('./images/tunnel-3.png');
 }
-.adirt {
-        background-image: url('./images/adirt.jpg');
+.dirt {
+        background-image: url('./images/dirt.jpg');
 }
 .bdirt {
   background-image: url('./images/bdirt.jpg');
@@ -237,8 +235,8 @@
   background-image: url('./images/cdirt.jpg');
 }
 
-.adirt-iron {
-  background-image: url('./images/adirt-iron.jpg');
+.dirt-iron {
+  background-image: url('./images/dirt-iron.jpg');
 }
 .bdirt-iron {
   background-image: url('./images/bdirt-iron.jpg');
@@ -247,8 +245,8 @@
   background-image: url('./images/cdirt-iron.jpg');
 }
 
-.adirt-gold {
-  background-image: url('./images/adirt-gold.jpg');
+.dirt-gold {
+  background-image: url('./images/dirt-gold.jpg');
 }
 .bdirt-gold {
   background-image: url('./images/bdirt-gold.jpg');
@@ -257,8 +255,8 @@
   background-image: url('./images/cdirt-gold.jpg');
 }
 
-.adirt-platinum {
-  background-image: url('./images/adirt-platinum.jpg');
+.dirt-platinum {
+  background-image: url('./images/dirt-platinum.jpg');
 }
 .bdirt-platinum {
   background-image: url('./images/bdirt-platinum.jpg');
@@ -280,16 +278,16 @@
 
 
 /* No BOMB at LEVEL C */
-.adirt-bomb {
-  background-image: url('./images/adirt-bomb.jpg');
+.dirt-bomb {
+  background-image: url('./images/dirt-bomb.jpg');
 }
 
 .bdirt-bomb {
   background-image: url('./images/bdirt-bomb.jpg');
 }
 
-.adirt-artifact {
-  background-image: url('./images/adirt-artifact.jpg');
+.dirt-artifact {
+  background-image: url('./images/dirt-artifact.jpg');
 }
 .bdirt-artifact {
   background-image: url('./images/bdirt-artifact.jpg');
@@ -298,8 +296,8 @@
   background-image: url('./images/cdirt-artifact.jpg');
 }
 
-.adirt-draw1 {
-  background-image: url('./images/adirt-draw1.jpg');
+.dirt-draw1 {
+  background-image: url('./images/dirt-draw1.jpg');
 }
 .bdirt-draw1 {
   background-image: url('./images/bdirt-draw1.jpg');
@@ -308,8 +306,8 @@
   background-image: url('./images/cdirt-draw1.jpg');
 }
 
-.adirt-draw2 {
-  background-image: url('./images/adirt-draw2.jpg');
+.dirt-draw2 {
+  background-image: url('./images/dirt-draw2.jpg');
 }
 .bdirt-draw2 {
   background-image: url('./images/bdirt-draw2.jpg');
@@ -319,88 +317,88 @@
 
 }
 
-.sp-red {
-  background-image: url('./images/sp-red.jpg');
+.steelPlate-red {
+  background-image: url('./images/steelPlate-red.jpg');
 }
-.sp-red-iron {
-  background-image: url('./images/sp-red-iron.jpg');
+.steelPlate-red-iron {
+  background-image: url('./images/steelPlate-red-iron.jpg');
 }
-.sp-red-gold {
-    background-image: url('./images/sp-red-gold.jpg');
+.steelPlate-red-gold {
+    background-image: url('./images/steelPlate-red-gold.jpg');
 }
-.sp-red-platinum {
-    background-image: url('./images/sp-red-platinum.jpg');
+.steelPlate-red-platinum {
+    background-image: url('./images/steelPlate-red-platinum.jpg');
 }
-.sp-red-emerald {
-    background-image: url('./images/sp-red-emerald.jpg');
+.steelPlate-red-emerald {
+    background-image: url('./images/steelPlate-red-emerald.jpg');
 }
-.sp-red-diamond {
-    background-image: url('./images/sp-red-diamond.jpg');
+.steelPlate-red-diamond {
+    background-image: url('./images/steelPlate-red-diamond.jpg');
 }
-.sp-red-draw1 {
-    background-image: url('./images/sp-red-draw1.jpg');
+.steelPlate-red-draw1 {
+    background-image: url('./images/steelPlate-red-draw1.jpg');
 }
-.sp-red-draw2 {
-    background-image: url('./images/sp-red-draw2.jpg');
+.steelPlate-red-draw2 {
+    background-image: url('./images/steelPlate-red-draw2.jpg');
 }
-.sp-red-bomb {
-    background-image: url('./images/sp-red.jpg');
-}
-
-.sp-yellow {
-  background-image: url('./images/sp-yellow.jpg');
-}
-.sp-yellow-iron {
-  background-image: url('./images/sp-yellow-iron.jpg');
-}
-.sp-yellow-gold  {
-  background-image: url('./images/sp-yellow-gold.jpg');
-}
-.sp-yellow-platinum {
-  background-image: url('./images/sp-yellow-platinum.jpg');
-}
-.sp-yellow-emerald {
-  background-image: url('./images/sp-yellow-emerald.jpg');
-}
-.sp-yellow-diamond {
-  background-image: url('./images/sp-yellow-diamond.jpg');
-}
-.sp-yellow-draw1 {
-  background-image: url('./images/sp-yellow-draw1.jpg');
-}
-.sp-yellow-draw2 {
-  background-image: url('./images/sp-yellow-draw2.jpg');
-}
-.sp-yellow-bomb {
-  background-image: url('./images/sp-yellow-bomb.jpg');
+.steelPlate-red-bomb {
+    background-image: url('./images/steelPlate-red.jpg');
 }
 
-.sp-blue {
-  background-image: url('./images/sp-blue.jpg');
+.steelPlate-yellow {
+  background-image: url('./images/steelPlate-yellow.jpg');
 }
-.sp-blue-iron {
-  background-image: url('./images/sp-blue-iron.jpg');
+.steelPlate-yellow-iron {
+  background-image: url('./images/steelPlate-yellow-iron.jpg');
 }
-.sp-blue-gold  {
-  background-image: url('./images/sp-blue-gold.jpg');
+.steelPlate-yellow-gold  {
+  background-image: url('./images/steelPlate-yellow-gold.jpg');
 }
-.sp-blue-platinum {
-  background-image: url('./images/sp-blue-platinum.jpg');
+.steelPlate-yellow-platinum {
+  background-image: url('./images/steelPlate-yellow-platinum.jpg');
 }
-.sp-blue-emerald {
-  background-image: url('./images/sp-blue-emerald.jpg');
+.steelPlate-yellow-emerald {
+  background-image: url('./images/steelPlate-yellow-emerald.jpg');
 }
-.sp-blue-diamond {
-  background-image: url('./images/sp-blue-diamond.jpg');
+.steelPlate-yellow-diamond {
+  background-image: url('./images/steelPlate-yellow-diamond.jpg');
 }
-.sp-blue-draw1 {
-  background-image: url('./images/sp-blue-draw1.jpg');
+.steelPlate-yellow-draw1 {
+  background-image: url('./images/steelPlate-yellow-draw1.jpg');
 }
-.sp-blue-draw2 {
-  background-image: url('./images/sp-blue-draw2.jpg');
+.steelPlate-yellow-draw2 {
+  background-image: url('./images/steelPlate-yellow-draw2.jpg');
 }
-.sp-blue-bomb {
-  background-image: url('./images/sp-blue-bomb.jpg');
+.steelPlate-yellow-bomb {
+  background-image: url('./images/steelPlate-yellow-bomb.jpg');
+}
+
+.steelPlate-blue {
+  background-image: url('./images/steelPlate-blue.jpg');
+}
+.steelPlate-blue-iron {
+  background-image: url('./images/steelPlate-blue-iron.jpg');
+}
+.steelPlate-blue-gold  {
+  background-image: url('./images/steelPlate-blue-gold.jpg');
+}
+.steelPlate-blue-platinum {
+  background-image: url('./images/steelPlate-blue-platinum.jpg');
+}
+.steelPlate-blue-emerald {
+  background-image: url('./images/steelPlate-blue-emerald.jpg');
+}
+.steelPlate-blue-diamond {
+  background-image: url('./images/steelPlate-blue-diamond.jpg');
+}
+.steelPlate-blue-draw1 {
+  background-image: url('./images/steelPlate-blue-draw1.jpg');
+}
+.steelPlate-blue-draw2 {
+  background-image: url('./images/steelPlate-blue-draw2.jpg');
+}
+.steelPlate-blue-bomb {
+  background-image: url('./images/steelPlate-blue-bomb.jpg');
 }
 
 
