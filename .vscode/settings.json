@@ -3,5 +3,6 @@
         "adirt",
         "Bombable",
         "Drillable"
-    ]
+    ],
+    "liveServer.settings.CustomBrowser": "chrome"
 }

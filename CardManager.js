@@ -1,4 +1,5 @@
 // so I think of focusing now in the cards mechanism,and I made a card manager class which roughly look like this:card class will be =
+import { Card } from "./Card.js";
 
 export class CardManager {
     constructor() {

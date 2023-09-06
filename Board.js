@@ -21,6 +21,7 @@ export class Board {
     this.gridContainer.appendChild(this.gridWrapper);
     this.createGrid(this.gridWrapper); // Create the grid squares
   }
+
   createGrid(wrapContainer) {
     if (isFirstBoard) {
       wrapContainer.style.height = "45%";
@@ -73,83 +74,88 @@ export class Board {
   }
 
   // Function to update the board state when multiple squares are drilled
-  updateBoardState(coordinates) {
-    coordinates.forEach(({ row, col }) => {
-      this.boardState[row][col] = {
-        terrain: "tunnel",
-        isBombable: false,
-        isDrillable: false,
-      };
-    });
-  }
+//   updateBoardState(coordinates) {
+//     coordinates.forEach(({ row, col }) => {
+//       this.boardState[row][col] = {
+//         terrain: "tunnel",
+//         isBombable: false,
+//         isDrillable: false,
+//       };
+//     });
+//   }
 
-  // Function to update the visual representation of the affected squares
-  updateSquareVisual(squares) {
-    squares.forEach(({ row, col }) => {
-      const square = getSquareElement(row, col); // Implement this function to get the square element
-      square.className = "tunnel"; // Set the class to "tunnel" for all affected squares
-    });
-  }
+//   // Function to update the visual representation of the affected squares
+//   updateSquareVisual(squares) {
+//     squares.forEach(({ row, col }) => {
+//       const square = getSquareElement(row, col); // Implement this function to get the square element
+//       square.className = "tunnel"; // Set the class to "tunnel" for all affected squares
+//     });
+//   }
 
-  // Method for bombing action with multiple squares
-  artifactsTakenCheck(squareCoordinates) {
-    squareCoordinates.forEach(({ row, col }) => {
-      const squareName = this.getTerrainType(row, col);
-      if (squareName.includes("artifact")) {
-        // Increment the artifact count
-        artifactsTaken++;
-      }
-      // Implement the rest of the bombing logic for each square here
-    });
+//   // Method for bombing action with multiple squares
+//   artifactsTakenCheck(squareCoordinates) {
+//     squareCoordinates.forEach(({ row, col }) => {
+//       const squareName = this.getTerrainType(row, col);
+//       if (squareName.includes("artifact")) {
+//         // Increment the artifact count
+//         artifactsTaken++;
+//       }
+//       // Implement the rest of the bombing logic for each square here
+//     });
 
-    if (artifactsTaken === 3) {
-      if (boardName === "board3") return this.endGame();
+//     if (artifactsTaken === 3) {
+//       if (boardName === "board3") return this.endGame();
 
-      this.replaceBoards();
-    }
-  }
+//       this.replaceBoards();
+//     }
+//   }
 
+//   // Function to end the game
+//   endGame() {
+//     // Perform any necessary end-of-game actions
+//     console.log("Game Over!");
+//     // You can show a game-over message or handle any other game-ending logic here.
 
-  // Function to end the game
-  endGame() {
-    // Perform any necessary end-of-game actions
-    console.log("Game Over!");
-    // You can show a game-over message or handle any other game-ending logic here.
+//     if (artifactsTaken === 3) {
+//       if (boardName === "board3") {
+//         this.endGame();
+//       } else {
+//         this.replaceBoards();
+//       }
+//     }
+//   }// Function to replace boards
 
-    if (artifactsTaken === 3) {
-      if (boardName === "board3") {
-        this.endGame();
-      } else {
-        this.replaceBoards();
-      }
-    }
-  }
+// replaceBoards() {
+//   console.log("LALALA")
+//   // Choose the appropriate board configuration based on game progress
+//   let newBoardConfig;
+//   if (artifactsTaken === 3) {
+//     // Initialize board2 with squares when 3rd artifact is taken from board1
+//     newBoardConfig = selectedBoardConfigs[2];
+//   } else if (artifactsTaken === 6) {
+//     // Switch positions of board2 and board3
+//     swapBoardPositions();
+//     // Initialize board3 with squares when 6th artifact is taken
+//     newBoardConfig = selectedBoardConfigs[3];
+//   } else {
+//     // All artifacts found or other endgame conditions, the game should end
+//     return;
+//   }
 
-  // Function to replace boards
-  replaceBoards() {
-    // Remove the current boards from the DOM
-    const currentBoards = document.querySelectorAll(".grid-wrapper");
-    currentBoards.forEach((board) => {
-      board.parentNode.removeChild(board);
-    });
+//   // Create a new instance of the Board class with the new configuration
+//   const newBoard = new Board("grid-container-bottom", newBoardConfig, "board3");
 
-    // Choose the appropriate board configuration based on game progress
-    let newBoardConfig;
-    if (artifactsTaken === 1) {
-      newBoardConfig = board2a;
-    } else if (artifactsTaken === 2) {
-      newBoardConfig = board3a;
-    } else {
-      // All artifacts found, the game should end
-      return;
-    }
+//   // Initialize event listeners for the new board
+//   const newUI = new UIHandler(newBoard);
+//   newUI.initialize();
+// }
 
-    // Create a new instance of the Board class with the new configuration
-    const newBoard = new Board("grid-container-top", newBoardConfig, "board2");
-
-    // Initialize event listeners for the new board
-    const newUI = new UIHandler(newBoard);
-    newUI.initialize();
-  }
-
+// // Function to switch positions of board2 and board3 in the DOM
+// swapBoardPositions() {
+//   const gridContainerTop = document.querySelector(".grid-container-top");
+//   const gridContainerBottom = document.querySelector(".grid-container-bottom");
+  
+//   // Swap their positions in the DOM
+//   gridContainerTop.parentNode.insertBefore(gridContainerBottom, gridContainerTop);
+// }
 }

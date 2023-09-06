@@ -1,3 +1,5 @@
+import { initializeTeamCards } from './cards'; // Provide the correct path to your cards.js file
+
 class GameManager {
     constructor() {
       this.players = []; // Store player objects
@@ -5,6 +7,15 @@ class GameManager {
     }
   
     initializeGame() {
+
+    const purpleTeam = initializeTeamCards("purple");
+    // const whiteTeam = cards.initializeTeamCards("white"); 
+    
+        console.log('purple team' , purpleTeam)
+        // console.log(purpleTeam)
+
+
+
       // Create and shuffle the market cards
       const marketCards = [];
       // Add instances of Card to marketCards with appropriate attributes
