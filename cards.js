@@ -84,7 +84,7 @@ const whiteTeamStrings = [
   "w-yellow20-dr2-bb6-vp6",
   "w-yellow25-dr2-vp10",
 ];
-export function initializeTeamCards(colorOfTeam) {
+export default function initializeTeamCards(colorOfTeam) {
   const team = [];
   const backsideImage = `${colorOfTeam}-team.jpg`;
   let idNumber = 1;   

@@ -7,10 +7,33 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="main-container">
-      <div class="container-cards-zone">
-        <div class="container-market cards-area">
-          <div class="player-inventory"></div>
+    <nav>
+      <h2>Active Player :</h2>      
+      <button class="help-button">?</button>
+    </nav>
+    
+    <div class="main-container">      
+      <div class="aside-container">
+      <div class="main-supply">
+        <h4>Main Supply</h4>
+      </div>      
+      <div class="player-inventory">
+        <h4>Player Inventory</h4>
+      </div>      
+      <div class="aside-piles">
+        <div class="discard-pile">
+          <h4>Discard Pile</h4>
+        </div>      
+        <div class="draw-pile">
+          <h4>Draw Pile</h4>
+        </div>      
+      </div>
+    </div>
+
+      <div class="container-cards-area">
+        <div class="container-market">
+          <h2>Market</h2>
+          <div class="container-market-cards">
           <div class="container-market-card red">
              <div class="red-pilots pilot-card"></div>
              <div class="card-inventory"></div>
@@ -28,33 +51,36 @@
              <div class="card-inventory"></div>
           </div>
         </div>
-       
-        <div class="cards-area">
-          <div class="player-inventory"></div>
-          <div class="container-market-card">
+      </div>       
+        </div>
+        
+              <div class="container-bords">
+                <div class="grid-container grid-container-top"></div>
+                <div class="grid-container grid-container-bottom"></div>
+              </div>       
+
+              <div class="buttons-container">
+                <button class="draw-button">Draw 2 Cards</button>
+                <button class="drill-button">Drill</button>
+                <button class="bomb-button">Bomb</button>
+              </div>
+      </div>
+          <!-- <div class="container-in-hand">
              <div class="red-pilots pilot-card in-hand"></div>
              
           </div>
-          <div class="container-market-card">
+          <div class="container-in-hand">
              <div class="yellow-pilots pilot-card in-hand"></div>
              
           </div>
-          <div class="container-market-card">
+          <div class="container-in-hand">
              <div class="blue-pilots pilot-card in-hand bonus"></div>
              
           </div>
-          <div class="container-market-card">
+          <div class="container-in-hand">
              <div class="joker-pilots pilot-card in-hand"></div>        
-          </div>
+          </div> -->
         </div>
-       
-        <div class="container-draw-pile"></div>
-      </div>
-      <div class="container-bords">
-        <div class="grid-container grid-container-top"></div>
-        <div class="grid-container grid-container-bottom"></div>
-      </div>
-    </div>
-    <script type="module" src="./main.js"></script>
+      <script type="module" src="./main.js"></script>
   </body>
 </html>

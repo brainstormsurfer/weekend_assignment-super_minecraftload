@@ -3,19 +3,6 @@ export class UIHandler {
         this.board = board;
         this.patternValidator = patternValidator;
       }
-    
-      // Display relevant squares for drilling based on player's action
-      displayDrillingSquares(icons) {
-        // Implement logic to highlight drillable squares
-        // Filter and highlight squares based on the provided icons
-      }
-    
-      // Display relevant squares for bombing based on player's action
-      displayBombingSquares(bomberCard) {
-        // Implement logic to highlight valid bombing squares
-        // Use the patternValidator to validate the bombing pattern
-      }
-    
       // Handle player's drilling action
       handleDrillingAction(selectedSquares, icons) {
         // Validate the drilling pattern using the patternValidator

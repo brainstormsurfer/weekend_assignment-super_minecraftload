@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&family=Roboto:wght@300;400;700&display=swap');
+
 *,
+button,
 *:before, 
 *:after {
   margin: 0;
@@ -8,65 +11,154 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
+  font-family: "Poppins", "Roboto", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  justify-content: space-between;
+  height: 250px;
+  width: 100%;
+  padding: 1em;
+  margin-top: 4em;
+}
+
+button {
+  width: 65%;
+  height: 55px;
+  padding: 0 1em;
+  font-size: 18px;
+  font-weight: bold;  
+  border-radius: 25px;  
+}
+
+.help-button {
+  display: flex;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 18px;
+  padding-top: 3px;  
+}
+
+nav {
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
 }
 
 .main-container {
-  display: flex;  
-  width: max-content;
-  min-width: 90%;
-  height: 1000px;
-  /* background-color:#6b69f0 ; */
+  text-align: center;
+  display: flex;    
   justify-content: center;
-  padding-top: 1em;  
-  /* flex-direction: column; */
+  padding: 1em;  
+  gap: 1em;
 }
 
-.player-inventory {
+.container-market-cards {
+  display: flex;    
+  padding: 1em;  
+  gap: 1em;
+} 
+
+.aside-container {
+  background-color: rgb(207, 90, 253);
   display: flex;  
-  border: 5px rgb(0, 0, 0) ridge;
-  width: 100px;
-  height: 100%;
-  background-color: rgb(255, 255, 255);
+  flex-direction: column;
+  align-items: center; 
+  gap: 1em;
+  width: 100%;
+  height: fit-content;
 }
 
-.container-cards-zone {
+.aside-piles {
+  padding-top: 1em;
   display: flex;
+  background-color: blue;
   flex-direction: column;
-  border: 1px rgb(0, 0, 0) ridge;
-  height: 1000px;
-  width: 70%;
-  gap: 3em;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+  gap: 1em;    
 }
-.cards-area {
+
+.main-supply,
+.player-inventory
+ {
+  display: flex;  
+  background-color: rgb(215, 238, 130);
+  border: 5px rgb(0, 0, 0) ridge;  
+  height: 200px;  
+  width: 100%;
+}
+
+.draw-pile {
+  background-color: rgb(130, 229, 238);
+  display: flex;
+  height: 90%;
+  width: 65%;
+}
+
+.discard-pile {
+  background-color: rgb(130, 229, 238);
+  display: flex;
+  width: 90%;
+  height: 65%;
+}
+
+.container-market {
+  display: flex;  
+  flex-direction: column;
+  background-color: violet;
+  height: 400px;
+  border: 1px rgb(0, 0, 0) ridge;
+  /* height: 1000px; */  
+}
+
+h4 {
+  height: min-content;
+  width: 100%;
+}
+/* .cards-area {
   display: flex;
   justify-content: space-evenly;
   align-items: start;
   border: 5px rgb(0, 0, 0) ridge;
-  flex: 1;
   height: 720px;
-  /* gap: 1.5em; */
-}
+} */
 
-.card-inventory {
-  display: flex;
-  height: 100px;
-}
-.container-active-cards {
+/* .container-active-cards {
   display: flex;
   border: 2px greenyellow dotted;
   background-color: greenyellow;
   height: 1000px;
-  flex: 1;
-}
+} */
+
 .container-market-card {
   display: flex;
+  /* flex: 1; */
   justify-content: space-between;
   flex-direction: column;
   border: 5px rgb(0, 0, 0) ridge;
   width: 175px;
-  max-width: 175px;
   height: 350px;
 }
+
+/* .container-in-hand {
+  display: flex;
+  justify-content: space-between;
+  background-color: aquamarine;
+  flex-direction: column;
+  border: 5px rgb(0, 0, 0) ridge;
+  width: 175px;
+  height: 350px;
+} */
+
 
 /* Style for the tooltip (image modal) */
 .tooltip {
@@ -96,7 +188,7 @@
   flex-direction: column;
   align-items: center;
   border: 5px rgb(0, 0, 0) ridge;
-  flex: 1;  
+  /* flex: 1;   */
   height: 400px;
 }
 
@@ -126,10 +218,17 @@
 .blue-pilots.pilot-card {
   background-image: url('./images/card-teamred15-drillblue1-draw2-vp3-bonusbomb.jpg');}
 
-/* .joker-pilots {
-  
-} */
-.in-hand {
+  /* .multicolor-pilots {
+    
+  } */
+
+.card-inventory {
+    display: flex;
+    height: 100px;
+    background: #00000059;
+}
+
+/* .in-hand {
   position: relative;
   width: 165px;
   height: 238px;
@@ -144,17 +243,17 @@
   width: 33px;
   height: 60px;
   border-radius: 5px;
-  background-color: rgba(65, 206, 52, 0.658); /* Change background color to red */
-  animation: blink 5s infinite; /* Increase animation duration to 5 seconds */
+  background-color: rgba(65, 206, 52, 0.658);
+  animation: blink 5s infinite; 
 }
 
 @keyframes blink {
   0%, 100% {
-    opacity: 1; /* Start and end with full opacity */
+    opacity: 1; 
   }
   50% {
-    opacity: 0.5; /* Blink by reducing opacity */
-  }
+    opacity: 0.5;
+}
 }
 
 .in-hand::before {
@@ -174,7 +273,7 @@
   border: 3px ridge  rgb(61, 6, 6);
   box-shadow: inset 0px 0px 5px 2px rgb(255, 166, 0);
   background-image: url('./images/token-bomb.png');
-}
+} */
 
 .grid-container {
   width: 500px; 
@@ -183,8 +282,6 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  /* overflow: hidden;   */
-  flex: 1;
 }
 
 .grid-wrapper {
