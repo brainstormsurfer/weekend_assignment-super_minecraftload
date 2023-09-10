@@ -111,8 +111,8 @@ button {
 
 .supply-item {
   padding: 1rem;
-  height: 10rem;
-  width: 10rem;
+  height: 7rem;
+  width: 7rem;
 }
 
 .container-right h2 {
@@ -134,26 +134,43 @@ nav h2 {
 
 .aside-container {
   display: flex;  
-  flex-direction: column;
-  width: 30rem;
+  flex-direction: column; 
+  min-width: 30rem;  
   justify-content: space-between;  
 }
-.player-inventory
- {
+
+.aside-piles {  
+  display: flex;  
+  flex-direction: column;  
+  gap: 2em;
+}
+
+.aside-piles h2 {  
+  margin-bottom: .75em;
+}
+
+.player-inventory {
   display: flex;    
   height: 30rem;  
 }
 
-.draw-pile-box { 
+.draw-pile-box,
+.discard-pile-box { 
   display: flex;
   flex-direction: column;
-  gap: 30em;
-  padding-bottom: 10em;  
+  padding: 10em;
+  align-items: center;
 }
 
+.discard-pile-box .container-card { 
+  height: 17.2rem;
+  width: 25rem;  
+}
+
+
 .discard {
-  height: 250px;
-  margin: auto;
+  width: 250px;
+  margin: auto;  
   transform: rotate(270deg);  
 }
 
@@ -164,10 +181,10 @@ nav h2 {
 .container-cards-area {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   gap:5em;
-  height: 100%;    
+  /* height: 100%;     */
 }
 
 .container-hand-area, 
@@ -178,15 +195,14 @@ nav h2 {
 }
 .container-market-cards {  
   display: flex;    
-  gap: 3em;  
+  gap: 20em;  
   border: 1px rgb(0, 0, 0) ridge;  
   margin-bottom: 3em;
 }
 
 .market-pile {
   height: 100%;
-  display: flex;
-  gap: 1em;
+  display: flex;  
   padding: 1em;
   flex-direction: column;
 }
@@ -216,8 +232,8 @@ nav h2 {
   display: grid;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  gap: 2em;
+  /* width: 100%; */
+  gap: 5em;
   padding: 0em 0em 2em 3em;  
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
