@@ -251,11 +251,10 @@ nav h2 {
 
 .container-hand-cards {
   display: grid;
-  /* justify-content: center; */
-  /* height: fit-content; */
   align-items: center;
   justify-content: center;
   width: 100%;
+  gap: 2em;
   padding: 0em 0em 2em 3em;  
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
