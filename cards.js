@@ -1,4 +1,4 @@
-
+console.log("check23")
 
 const cardStatus = {
   1: "draw-pile",
@@ -84,7 +84,8 @@ const whiteTeamStrings = [
   "w-yellow20-dr2-bb6-vp6",
   "w-yellow25-dr2-vp10",
 ];
-export default function initializeTeamCards(colorOfTeam) {
+
+export function initializeTeamCards(colorOfTeam) {
   const team = [];
   const backsideImage = `${colorOfTeam}-team.jpg`;
   let idNumber = 1;   
@@ -92,7 +93,7 @@ export default function initializeTeamCards(colorOfTeam) {
 
   for (const cardInfo of teamStrings) {
 
-    const [teamColor, tempColorPrice, tempDrillIcons, tempBuyBonus, tempVictoryPoints] =
+    const [playerColor, tempColorPrice, tempDrillIcons, tempBuyBonus, tempVictoryPoints] =
       cardInfo.split("-");
 
     // Extract the color and price differently
@@ -133,13 +134,13 @@ export default function initializeTeamCards(colorOfTeam) {
 
     // Skip assignment if drillIcons, buyBonus, and victoryPoints are empty
     const card = {
-      id: `${teamColor.charAt(0)}${cardColor.charAt(0)}${idNumber.toString().padStart(2, "0")}`,
-      teamColor: colorOfTeam,
+      id: `${playerColor.charAt(0)}${cardColor.charAt(0)}${idNumber.toString().padStart(2, "0")}`,
+      playerColor: colorOfTeam,
       color: cardColor,
       price: cardPrice >= 10 ? cardPrice : 0,
       cardStatus: cardInitialStatus, // Set the initial status to draw-pile
-      backImage: backsideImage,
-      frontImage: `${cardInfo}.jpg`,
+      backImage: `./images/cards/${backsideImage}`,
+      frontImage: `./images/cards/${cardInfo}.jpg`,
     };  
     // Check if the card has drillIcons, buyBonus, and victoryPoints and assign them if present
     if (drillIcons) {

@@ -36,7 +36,7 @@ export class Board {
       for (let col = 0; col < this.numCols; col++) {
         const squareName = this.getTerrainType(row, col);
         const square = document.createElement("div");
-        console.log("squareName", squareName);
+        // console.log("squareName", squareName);
         square.classList.add("grid-square", squareName);
         square.setAttribute("id", `${this.boardName.slice(-1)}-${row}-${col}`);
         wrapContainer.appendChild(square);
@@ -50,7 +50,7 @@ export class Board {
       const rowState = [];
       for (let col = 0; col < this.numCols; col++) {
         const squareName = this.getTerrainType(row, col);
-        console.log(squareName);
+        // console.log(squareName);
         const terrainType = squareName.split("-")[0];
         const isBombable = terrainType === "dirt" || terrainType === "rock";
         const isDrillable =
@@ -113,7 +113,7 @@ export class Board {
 //   // Function to end the game
 //   endGame() {
 //     // Perform any necessary end-of-game actions
-//     console.log("Game Over!");
+    // console.log("Game Over!");
 //     // You can show a game-over message or handle any other game-ending logic here.
 
 //     if (artifactsTaken === 3) {
@@ -126,7 +126,7 @@ export class Board {
 //   }// Function to replace boards
 
 // replaceBoards() {
-//   console.log("LALALA")
+  // console.log("LALALA")
 //   // Choose the appropriate board configuration based on game progress
 //   let newBoardConfig;
 //   if (artifactsTaken === 3) {

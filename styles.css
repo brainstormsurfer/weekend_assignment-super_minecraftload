@@ -10,17 +10,51 @@ button,
   border: .25px solid red;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain;
+  background-size: cover;
+  font-size: 62.5%;
   font-family: "Poppins", "Roboto", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.main-container {
+  text-align: center;
+  width: 100%;
+  min-width: max-content;
+  display: flex;    
+  justify-content: center;
+  padding: 1em;  
+  gap: .5em;
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 3rem;
+  width: 100%;
+}
+h3 {
+  font-size: 2rem;
+}
+
+.player-instruction {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+
+body {
+  height: 100%;
+}
 
 .container-right {
   display: flex;
+  height: 100%;
+  width: 60%;
   flex-direction: column;  
   align-items: center;
-  width: 100%;
-  margin-top: 4em;  
+  gap: 2rem;
+  /* margin-top: 4rem;   */
 }
 
 .buttons-container {
@@ -28,102 +62,141 @@ button,
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 250px;
-  width: 90%;
+  height: 25rem;
+  width: 80%;
   padding: 1em;
 }
 
+/*! + active - hover - disable */
+
 button {
   width: 65%;
-  height: 55px;
-  padding: 0 1em;
-  font-size: 18px;
+  height: 5.5rem;
+  padding: 0 1rem;
+  font-size: 2rem;
   font-weight: bold;  
-  border-radius: 25px;  
+  border-radius: 2.5rem;
+  border: .4rem #000000 solid;
+  box-shadow: inset 0px 0px 40px 0px #fff;
+  background: linear-gradient(to bottom, #fd9e10, #FDBE14 11%, #FD8321 34%, #FD3931 60%, #C4273B 84%, #540452 100%);
+  }
+
+  button:hover {  
+  box-shadow: none;
+  background: linear-gradient(to bottom, #FDD610, #FDBE14 11%, #FD8321 34%, #FD3931 60%, #C4273B 84%, #72066e 100%);
+  }
+  
+  button:active {  
+  box-shadow: none;
+  background: linear-gradient(to bottom, #f7ff88, #b7fd14 11%, #72fd21 34%, #10dd6c 60%, #0ac486 74%, #22a197 100%);
+  }
+
+.buttons-container button {
+  min-width: max-content;    
 }
 
-.help-button {
-  display: grid;
+.help-button {  
+  display: flex;
+  align-items: center;
   justify-content: center;
-  width: 35px;
-  height: 35px;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
-  font-size: 18px;
-  padding-top: 3px;  
+  font-size: 3rem;
+  /* padding-top: 3px;   */
 }
 
 .main-supply {  
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  height: 500px;
-  width: 100%;
+  width: fit-content;
+  gap: 2em;
+  /* place-items: center; */
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* height: 100%; */
+}
+
+.supply-item {
+  padding: 1rem;
+  height: 10rem;
+  width: 10rem;
 }
 
 .container-right h2 {
   margin-top: 2em;
-  width: 100%;
+  width: fit-content;
 }
 
 nav {
-  display: flex;
-  height: 50px;
+  display: flex;  
+  height: 7rem;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1em;
+  padding: 3em;  
 }
 
-.main-container {
-  text-align: center;
-  display: flex;    
-  justify-content: center;
-  padding: 1em;  
-  gap: 1em;
+nav h2 {
+  width: 20%;
 }
 
 .container-market-cards {
   display: flex;
-  gap: 1em;
+  gap: 3em;
 } 
 
 
 .aside-container {
   display: flex;  
   flex-direction: column;
-  align-items: center; 
-  gap: 1em;
-  width: 100%;
+  /* align-items: center;  */
+  gap: 4em;
+  min-width: 40rem;
+  /* height: min-content; */
 }
 
-.aside-piles {
-  margin: 10px;
-  padding: 2em 0;
+.aside-piles {  
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 500px;
-  width: 100%;
-  gap: 2em;    
+  /* width: 100%; */
+  max-height: content;  
 }
-
 
 .player-inventory
  {
   display: flex;    
-  height: 400px;  
+  height: 30rem;  
   width: 100%;
 }
 
-.draw-pile {
-  display: flex;
-  height: 90%;
-  width: 65%;
+/* .draw-pile-box .container-card { */
+  /* display: flex; */
+  /* width: 25.5rem;
+  height: 35rem;   */
+  /* width: 21rem;
+  height: 30rem; */
+  /* background-repeat: no-repeat; */
+  /* background-position: center center; */
+  /* background-size: contain;  */
+/* } */
+
+.discard-pile-box .container-card{
+  /* display: flex; */
+  /* width: 25.5rem;
+  height: 35rem; */
+  /* width: 21rem;
+  height: 30rem; */
+  transform: rotate(270deg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;  
+  background-image: url('./images/cards/purple-team-back.jpg');
 }
 
-.discard-pile {
-  display: flex;
-  width: 90%;
-  height: 65%;
+.discard-pile-box  {
+  width: min-content;
+  height: min-content;
 }
 
 .container-cards-area {
@@ -134,22 +207,45 @@ nav {
 .container-market {
   display: flex;  
   flex-direction: column;
-  height: fit-content;
-  margin-bottom: 1em;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;  
   border: 1px rgb(0, 0, 0) ridge;  
 }
 
-.container-hand {
-  display: grid;  
-  height: 500px;`
+.container-hand-cards {
+  display: grid; 
+  /* height: fit-content; */
   width: 100%;
-  grid-template-rows: repeat(4, 1fr);
+  padding: 2em;
+  gap: 2em;  
+  grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
 }
 
+/* .container-card,
+.draw-pile-box,
+.container-hand-card { */
+.container-card {
+  display: flex;
+  background-image: url('./images/cards/p-blue03-dr1.jpg');
+  /* position: relative;   */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  width: 23rem;
+  height: 30rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;  
+}
 
-.hand-card{  
-  height: 250px;
+/* .in-hand-card {  
+  position: relative;
+  height: 25rem;
+} */
+/* attach class for chosen cards in hand */
+.in-play {  
+  border: .5rem solid greenyellow;
 }
 
 
@@ -158,14 +254,9 @@ h3, h4 {
   width: 100%;
 }
 
-
-.container-market-card {
-  display: flex;
-  /* flex: 1; */
-  justify-content: space-between;
-  flex-direction: column;
-  width: 175px;
-  height: 350px;
+.card {
+  width: 17.5rem;
+  height: 35rem;
 }
 
 .tooltip {
@@ -193,7 +284,7 @@ h3, h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 400px;
+  height: 40rem;
 }
 
 
@@ -206,21 +297,30 @@ h3, h4 {
 .container-market-card.blue {  
   background: linear-gradient(to left top, rgba(60, 238, 199, 0.747), rgb(255, 255, 255));
 } 
-.container-market-card.joker {  
-  background: linear-gradient(45deg, rgba(255, 48, 48, 0.664), rgba(0,255,0,0) 70.71%),
-  linear-gradient(120deg, rgba(255, 208, 0, 0.712), rgba(0,255,0,0) 70.71%),
-  linear-gradient(270deg, rgba(50, 192, 161, 0.692), rgba(0,0,255,0) 70.71%);
+.container-market-card.multi {  
+  background: linear-gradient(45deg, rgba(255, 48, 48, 0.719), rgba(255, 0, 0, 0) 70.71%),
+  linear-gradient(120deg, rgb(255, 235, 146), rgba(255, 230, 0, 0.24) 70.71%),
+  linear-gradient(200deg, rgb(0, 255, 200), rgb(107, 187, 167) 90.71%);
 } 
 
-.red-pilots.pilot-card {
-  background-image: url('./images/card-teamred15-drillred2-bomb6-vp5-bonusbomb.jpg');
+.market-red {
+   height: 100%;
+  /* background-image: url('./images/cards/w-red15-dr2-bombL-bb5-vp5.jpg'); */
 }
 
-.yellow-pilots.pilot-card{
-  background-image: url('./images/card-teamred15-drillyellow3-vp5-bonusmineral.jpg');
+.market-yellow {
+   height: 100%;
+  /* background-image: url('./images/card-teamred15-drillyellow3-vp5-bonusmineral.jpg'); */
 }
-.blue-pilots.pilot-card {
-  background-image: url('./images/card-teamred15-drillblue1-draw2-vp3-bonusbomb.jpg');}
+.market-blue {
+   height: 100%;
+  /* background-image: url('./images/card-teamred15-drillblue1-draw2-vp3-bonusbomb.jpg'); */
+}
+
+.market-multi {
+   height: 100%;
+  /* background-image: url('./images/card-teamred15-drillblue1-draw2-vp3-bonusbomb.jpg'); */
+}
 
   /* .multicolor-pilots {
     
@@ -228,7 +328,7 @@ h3, h4 {
 
 .pile-inventory {
     display: flex;
-    height: 200px;
+    height: 20rem;
     background: #00000059;
 }
 
@@ -279,8 +379,8 @@ h3, h4 {
 } */
 
 .grid-container {
-  width: 500px; 
-  height: 500px; 
+  width: 50rem; 
+  height: 50rem; 
   border: 1px solid #000;
   display: flex;
   justify-content: center;
@@ -305,30 +405,6 @@ h3, h4 {
 }
 
 /* ====== Cards ===== */ 
-
-.card-team-green {
-  background-image: url('./images/team-green.png');
-}
-.card-team-purple {
-  background-image: url('./images/team-purple.png');
-}
-.card-team-white {
-  background-image: url('./images/team-white.png');
-}
-.card-team-red {
-  background-image: url('./images/team-red.png');
-}
-.card-teamred15-drillblue1-draw2-vp3-bonusbomb {
-  background-image: url('./images/card-teamred15-drillblue1-draw2-vp3-bonusbomb.jpg');
-}
-.card-teamred15-drillred2-bomb6-vp5-bonusbomb {
-  background-image: url('./images/card-teamred15-drillred2-bomb6-vp5-bonusbomb.jpg');
-}
-.card-teamred15-drillyellow3-vp5-bonusmineral {
-  background-image: url('./images/card-teamred15-drillyellow3-vp5-bonusmineral.jpg');
-}
-
-
 
 
 /* ====== Board Tiles / Squares ===== */ 

@@ -47,7 +47,7 @@ const board3a = {
   "dirt-gold": ["2", "18", "24"],
   "dirt-iron": ["3", "4", "8", "16", "19", "28", "31"],
   "steelPlate-red-platinum": ["8"],
-  "steelPlate-red-iron": ["10"],
+  "steelPlate-r ed-iron": ["10"],
   "rock-draw1": ["12"],
   "steelPlate-yellow-bomb": ["13"],
   "steelPlate-blue": ["15"],

@@ -1,16 +1,36 @@
+import { Board } from "./Board.js";
 // import { Player } from "./Player.js";
 // import { CardManager } from "./CardManager.js";
 // import { Card } from "./Card.js";
-// import { initializeTeamCards } from './cards.js';
+import { initializeTeamCards } from './cards.js';
 // import { UIHandler } from "./UIHandler.js";
-import initializeTeamCards from './cards.js';
+// import initializeTeamCards from './cards.js';
 import { board1a, board2a, board3a } from './boards.js';
+// import { Player } from './Player.js'; // Make sure the path is correct
+// import CardManager from './CardManager';
+// import { initCards } from './UICardsHandler.js';
+// import Player from "./Player";
+// Assuming you have a playerColor (e.g., 'red')
+// const playerColor = 'red';
+// const cardManager = new CardManager(playerColor);
 
+// // Shuffle the draw pile
+// cardManager.shuffleArray(cardManager.drawPile);
+
+// // Draw a card from the draw pile
+// const drawnCard = cardManager.drawCard();
+
+// // Move a card from the draw pile to the player's hand
+// cardManager.moveCard(cardManager.drawPile, cardManager.playersHands[playerColor], drawnCard);
+
+// Get the player's cards
+// const playerCards = cardManager.getPlayerCards();
 const player1Cards = initializeTeamCards("purple")
-const player2Cards = initializeTeamCards("white")
-
-import { Board } from "./Board.js";
-
+// const player2Cards = initializeTeamCards("white")
+// console.log(player1Cards);
+console.log("check1");
+// initCards();
+console.log("check2");
 document.addEventListener("DOMContentLoaded", () => {
   // Create an instance of the Board class with board numbers
   const board1 = new Board("grid-container-top", board1a, "board1");
