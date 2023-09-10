@@ -13,77 +13,82 @@
     </nav>
     
     <div class="main-container"> 
-
+      
       <div class="aside-container">
-      <div class="player-inventory">
-        <h2>Inventory</h2>
-      </div>      
+        <div class="inventory-box" >
+          <h2>Inventory</h2>
+          <div class="player-inventory">
+          </div>      
+        </div>
      
       <div class="aside-piles">
-        <h2>Discard Pile</h2>
+
+        <div class="draw-pile-box">
+          <h2>Draw Pile</h2>
+          <div class="container-card draw empty"></div>
+        </div> 
+        
         <div class="discard-pile-box">
-          <div class="container-card"></div>
+            <h2>Discard Pile</h2>
+            <div class="container-card discard empty">
+          </div>
         </div> 
 
-        <h2>Draw Pile</h2>
-        <div class="draw-pile-box">
-          <div class="container-card"></div>
-        </div> 
+       
       </div>
     </div>
 
       <div class="container-cards-area">
 
+        <div class="container-market-area">
         <h2>Market</h2>
-
           <div class="container-market-cards">
 
             <div class="market-pile red">
-          <div class="container-card"></div>
+          <div class="container-card market"></div>
              <div class="pile-inventory"></div>             
           </div>
 
           <div class="market-pile yellow">
-          <div class="container-card"></div>
+          <div class="container-card market"></div>
              <div class="pile-inventory"></div>             
           </div>
 
           <div class="market-pile blue">
-          <div class="container-card"></div>
+          <div class="container-card market"></div>
              <div class="pile-inventory"></div>             
           </div>
 
           <div class="market-pile multi">
-          <div class="container-card"></div>
+          <div class="container-card market"></div>
              <div class="pile-inventory"></div>             
           </div>
-
         </div>
-      
-        
+      </div>
+        <div class="container-hand-area">
         <h2>In Hand</h2>
         <div class="container-hand-cards">    
-        <div class="in-hand container-card" id="hand1">  
+        <div class="in-hand empty container-card" id="hand1">  
         </div>        
-        <div class="in-hand container-card" id="hand2">                    
+        <div class="in-hand empty container-card" id="hand2">                    
         </div>        
-        <div class="in-hand container-card" id="hand3">                    
+        <div class="in-hand empty container-card" id="hand3">                    
         </div>
-        <div class="in-hand container-card" id="hand4">                    
+        <div class="in-hand empty container-card" id="hand4">                    
         </div>      
-        <div class="in-hand container-card" id="hand5">                    
+        <div class="in-hand empty container-card" id="hand5">                    
         </div>        
-        <div class="in-hand container-card" id="hand6">                    
+        <div class="in-hand empty container-card" id="hand6">                    
         </div>        
-        <div class="in-hand container-card" id="hand7">                    
+        <div class="in-hand empty container-card" id="hand7">                    
         </div>      
-        <div class="in-hand container-card" id="hand8">                          
+        <div class="in-hand empty container-card" id="hand8">                          
       </div>
     </div>
-
+    </div>
         </div>
         
-              <div class="container-bords">
+              <div class="container-boards">
                 <div class="grid-container grid-container-top"></div>
                 <div class="grid-container grid-container-bottom"></div>
               </div>       
@@ -115,7 +120,7 @@
                 <div class="supply-item"></div>
               </div>      
       </div>
-        </div>
+        </div>      
         
       <!-- <script type="module" src="./UICardsHandler.js"></script> -->
       <script type="module" src="./main.js"></script>

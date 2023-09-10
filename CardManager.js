@@ -9,7 +9,7 @@ class CardManager {
       blue: [],
       multi: [],
     };
-  }
+  
 
   // Initialize the draw pile with all the cards
   initializeDrawPile(cards) {

@@ -18,20 +18,26 @@ button,
 .main-container {
   text-align: center;
   width: 100%;
-  min-width: max-content;
+  height: 100%;
   display: flex;    
   justify-content: center;
-  padding: 1em;  
-  gap: .5em;
-  font-size: 3rem;
+  justify-content: space-evenly;
+  padding: 5em;
+  gap: 5em;
+}
+
+.container-boards {
+  padding: 7em 5em;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   width: 100%;
 }
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .player-instruction {
@@ -42,41 +48,34 @@ h3 {
   gap: 1em;
 }
 
-
-body {
-  height: 100%;
-}
-
 .container-right {
   display: flex;
-  height: 100%;
-  width: 60%;
   flex-direction: column;  
   align-items: center;
   gap: 2rem;
-  /* margin-top: 4rem;   */
+  padding: 3em;
 }
 
 .buttons-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 25rem;
+  justify-content: space-around;
+  height: 15rem;
+  gap: 5em;
+  padding: 5em;
   width: 80%;
-  padding: 1em;
 }
 
 /*? + active - hover - disable */
 /*! + TO CHANGE CURRENT COLORS !*/
 button {
-  width: 65%;
-  height: 5.5rem;
-  padding: 0 1rem;
-  font-size: 2rem;
+  height: 4rem;
+  padding: .7rem 1.5rem;
+  font-size: 1.5rem;
   font-weight: bold;  
   border-radius: 2.5rem;
-  border: .4rem #000000 solid;
+  border: .2rem #000000 solid;
   box-shadow: inset 0px 0px 40px 0px #fff;
   background: linear-gradient(to bottom, #fd9e10, #FDBE14 11%, #FD8321 34%, #FD3931 60%, #C4273B 84%, #540452 100%);
   }
@@ -91,10 +90,6 @@ button {
   background: linear-gradient(to bottom, #f7ff88, #b7fd14 11%, #72fd21 34%, #10dd6c 60%, #0ac486 74%, #22a197 100%);
   }
 
-.buttons-container button {
-  min-width: max-content;    
-}
-
 .help-button {  
   display: flex;
   align-items: center;
@@ -103,18 +98,15 @@ button {
   height: 5rem;
   border-radius: 50%;
   font-size: 3rem;
-  /* padding-top: 3px;   */
 }
 
 .main-supply {  
   display: grid;
   width: fit-content;
   gap: 2em;
-  /* place-items: center; */
   justify-items: center;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  /* height: 100%; */
 }
 
 .supply-item {
@@ -143,54 +135,30 @@ nav h2 {
 .aside-container {
   display: flex;  
   flex-direction: column;
-  /* align-items: center;  */
-  gap: 4em;
-  min-width: 40rem;
-  /* height: min-content; */
+  width: 30rem;
+  justify-content: space-between;  
 }
-
-.aside-piles {  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* width: 100%; */
-  max-height: content;  
-}
-
 .player-inventory
  {
   display: flex;    
   height: 30rem;  
-  width: 100%;
 }
 
-/* .draw-pile-box .container-card { */
-  /* display: flex; */
-  /* width: 25.5rem;
-  height: 35rem;   */
-  /* width: 21rem;
-  height: 30rem; */
-  /* background-repeat: no-repeat; */
-  /* background-position: center center; */
-  /* background-size: contain;  */
-/* } */
-
-.discard-pile-box .container-card{
-  /* display: flex; */
-  /* width: 25.5rem;
-  height: 35rem; */
-  /* width: 21rem;
-  height: 30rem; */
-  transform: rotate(270deg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;  
-  background-image: url('./images/cards/purple-team-back.jpg');
+.draw-pile-box { 
+  display: flex;
+  flex-direction: column;
+  gap: 30em;
+  padding-bottom: 10em;  
 }
 
-.discard-pile-box  {
-  width: min-content;
-  height: min-content;
+.discard {
+  height: 250px;
+  margin: auto;
+  transform: rotate(270deg);  
+}
+
+.draw {
+  margin: auto;
 }
 
 .container-cards-area {
@@ -198,13 +166,16 @@ nav h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 100%; */
-  height: 100%;  
-}
-.container-cards-area h2 {
-  margin-bottom: 1em;
+  gap:5em;
+  height: 100%;    
 }
 
+.container-hand-area, 
+.container-market-area {
+  display: flex;
+  flex-direction: column;
+  gap: 7em;
+}
 .container-market-cards {  
   display: flex;    
   gap: 3em;  
@@ -225,14 +196,6 @@ nav h2 {
    height: 17.5rem;
    background: #00000059;
 }
-
-.container-draw-pile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 20rem;
-}
-
 
 .market-pile.red {  
   background: linear-gradient(to left top, rgba(255, 21, 21, 0.829), rgb(255, 255, 255));
@@ -261,21 +224,20 @@ nav h2 {
 }
 
 .container-card {
-  display: flex;
-  background-image: url('./images/cards/p-blue03-dr1.jpg');
-
-  width: 23rem;
-  height: 30rem;
+  width: 17.2rem;
+  height: 25rem;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;  
 }
 
-/* .in-hand-card {  
-  position: relative;
-  height: 25rem;
-} */
-/* attach class for chosen cards in hand */
+.empty {  
+  border: tomato .5rem dashed;
+  box-shadow: inset 0px 0px 50px 0px tomato;
+  border-radius: 15px;
+  padding: 1rem;  
+}
+
 .in-play {  
   border: .5rem solid greenyellow;
 }
@@ -308,57 +270,6 @@ h3, h4 {
   max-height: 80%;
 }
 
-/* .pilot-card {
-  height: 100%;
-} */
-
-
-/* .in-hand {
-  position: relative;
-  width: 165px;
-  height: 238px;
-}
-
-.in-hand::after {
-  position: absolute;
-  border: 2px solid rgb(187, 186, 197);
-  content: "";
-  top: 23px;
-  left: 0;
-  width: 33px;
-  height: 60px;
-  border-radius: 5px;
-  animation: blink 5s infinite; 
-}
-
-@keyframes blink {
-  0%, 100% {
-    opacity: 1; 
-  }
-  50% {
-    opacity: 0.5;
-}
-}
-
-.in-hand::before {
-  position: absolute;
-  border: 3px ridge rgb(187, 186, 197);
-  content: "";
-  top: 137px;
-  left: 0;
-  width: 37px;
-  height: 40px;
-  border-radius: 5px;
-}
-
-.in-hand:hover::before {
-  transform: scale(2.5);
-  border-radius: 50%;
-  border: 3px ridge  rgb(61, 6, 6);
-  box-shadow: inset 0px 0px 5px 2px rgb(255, 166, 0);
-  background-image: url('./images/token-bomb.png');
-} */
-
 .grid-container {
   width: 50rem; 
   height: 50rem; 
@@ -372,7 +283,6 @@ h3, h4 {
   display: grid;
   border: 1px solid green;
   grid-template-columns: repeat(var(--cols), 1fr);
-  /* grid-gap: 1px;   */
   width: calc(100% - 60px);
   height: 100%;
 }
